@@ -20,6 +20,7 @@
 		<mvc:annotation-driven/>
 		
 		<mvc:resources location="/resources/" mapping="/resource/**"/>
+		<mvc:resources location="/WEB-INF/angular/" mapping="/angular/**"/>
 		
 		<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>

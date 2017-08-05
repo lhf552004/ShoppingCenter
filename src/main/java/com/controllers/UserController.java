@@ -26,7 +26,15 @@ public class UserController {
 		ModelAndView view = new ModelAndView("hello");
 		return view;
 	}
-	
+	@RequestMapping(value="/test", method=RequestMethod.GET)
+	public ModelAndView getTest() {
+		ModelAndView view = new ModelAndView("/html/test");
+		return view;
+	}
+	@RequestMapping(value = "/staticPage", method = RequestMethod.GET)
+	   public String redirect() {
+	      return "redirect:/html/final.html";
+	}
 	@RequestMapping(value="/saveOrUpdate", method=RequestMethod.POST)
 	public @ResponseBody Map<String, Object> getSaved( Users user) {
 		Map<String, Object> map = new HashMap<String, Object>();
