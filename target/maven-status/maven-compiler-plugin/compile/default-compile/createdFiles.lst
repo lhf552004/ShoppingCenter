@@ -1,6 +1,0 @@
-com\services\UserServices.class
-com\servicesImpl\UserServicesImpl.class
-com\controllers\UserController.class
-com\entities\Users.class
-com\dao\UserDao.class
-com\daoImpl\UserDaoImpl.class

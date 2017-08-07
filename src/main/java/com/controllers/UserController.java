@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.entities.Users;
+import com.entities.User;
 import com.services.UserServices;
 
 @Controller
@@ -36,7 +36,7 @@ public class UserController {
 	      return "redirect:/html/final.html";
 	}
 	@RequestMapping(value="/saveOrUpdate", method=RequestMethod.POST)
-	public @ResponseBody Map<String, Object> getSaved( Users user) {
+	public @ResponseBody Map<String, Object> getSaved( User user) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		
 		if(userServices.saveOrUpdate(user)) {
@@ -47,10 +47,10 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/list", method=RequestMethod.POST)
-	public @ResponseBody Map<String, Object> getAll(Users user) {
+	public @ResponseBody Map<String, Object> getAll(User user) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		
-		List<Users> list = userServices.list();
+		List<User> list = userServices.list();
 		if(list != null) {
 			map.put("status", "200");
 			map.put("message", "Data found");
@@ -64,7 +64,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/delete", method=RequestMethod.POST)
-	public @ResponseBody Map<String, Object> delete(Users user) {
+	public @ResponseBody Map<String, Object> delete(User user) {
 		Map<String, Object> map = new HashMap<String, Object>();
 		
 		if(userServices.delete(user)) {

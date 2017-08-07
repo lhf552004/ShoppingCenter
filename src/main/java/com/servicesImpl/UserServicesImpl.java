@@ -6,26 +6,37 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dao.UserDao;
-import com.entities.Users;
+import com.entities.Login;
+import com.entities.User;
 import com.services.UserServices;
 
 @Service
 public class UserServicesImpl implements UserServices {
 	@Autowired
 	UserDao userDao;
-	public List<Users> list() {
+	public List<User> list() {
 		// TODO Auto-generated method stub
 		return userDao.list();
 	}
 
-	public boolean delete(Users user) {
+	public boolean delete(User user) {
 		// TODO Auto-generated method stub
 		return userDao.delete(user);
 	}
 
-	public boolean saveOrUpdate(Users user) {
+	public boolean saveOrUpdate(User user) {
 		// TODO Auto-generated method stub
 		return userDao.saveOrUpdate(user);
+	}
+
+	public void register(User user) {
+		// TODO Auto-generated method stub
+		userDao.register(user);
+	}
+
+	public User validateUser(Login login) {
+		// TODO Auto-generated method stub
+		return userDao.validateUser(login);
 	}
 
 }
